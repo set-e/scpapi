@@ -6,14 +6,18 @@ Python 3.9+
 ### Example
 ```
 import json
-from scpapi.virtual_server import VirtualServer
+from scpapi import Client
+from scpapi.resource.virtual_server import VirtualServer
 
 
-virtual_server = VirtualServer(
-    project_id='PROJECT-XXXXXXXXXXXXXXXXXXXXXX',
-    access_key='XXXXXXXXXXXXXXXXXXXX',
-    secret_key='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+### First create a client with your credentials ###
+client = Client(
+    project_id='PROJECT-ZLLrEKSps6pG5cZPcgKlVl',
+    access_key='wNf5pfcBVVwaKG5A1Z8M',
+    secret_key='NUExWjhNd3FpSXptbnZkcWdWWXU5d3NsbitvSFE9'
 )
+### Create a virtual server with created client ###
+virtual_server = VirtualServer(client=client)
 
 ### List of Virtual Server ###
 vm_list = json.loads(virtual_server.list().text)
