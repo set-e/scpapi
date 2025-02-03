@@ -12,9 +12,9 @@ from scpapi.resource.virtual_server import VirtualServer
 
 ### First create a client with your credentials ###
 client = Client(
-    project_id='PROJECT-ZLLrEKSps6pG5cZPcgKlVl',
-    access_key='wNf5pfcBVVwaKG5A1Z8M',
-    secret_key='NUExWjhNd3FpSXptbnZkcWdWWXU5d3NsbitvSFE9'
+    project_id='PROJECT-XXXXXXXXXX',
+    access_key='XXXXXXXXXX',
+    secret_key='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 )
 ### Create a virtual server with created client ###
 virtual_server = VirtualServer(client=client)
@@ -32,21 +32,21 @@ virtual_server_body = {
         'encryptEnabled': False,
         'diskType': 'SSD'
     },
-    'imageId': 'IMAGE-9DNNuuBDrMcKq8kfr29xjm',
+    'imageId': 'IMAGE-XXXXXXXXXXXXXXXXXXXX',
     'nic': {
-        'subnetId': 'SUBNET-lr6CTHHQs2mQNdIZ9VK2-m',
+        'subnetId': 'SUBNET-XXXXXXXXXXXXXXXXXXXX',
         'natEnabled': True,
-        'publicIpId' : 'PUBLIC_IP-avsFAjQPrNmJ--JFfLW9ei'
+        'publicIpId' : 'PUBLIC_IP-XXXXXXXXXXXXXXXXXXXX'
     },
     'deletionProtectionEnabled': False,
-    'securityGroupIds': ['FIREWALL_SECURITY_GROUP-rj5TNm2VsXcOYbM04lvWah'],
+    'securityGroupIds': ['FIREWALL_SECURITY_GROUP-XXXXXXXXXX'],
     'serverType': 's1v2m4',
-    'serviceZoneId': 'ZONE-FClPklmysrhRpknZ6DaI2f',
-    'serverGroupId': 'SERVICE-Aj3ONjl2qEkTs_7ccYAPjo',
+    'serviceZoneId': 'ZONE-XXXXXXXXXXXXXXXXXXXX',
+    'serverGroupId': 'SERVICE-XXXXXXXXXXXXXXXXXXXX',
     'tags': [
         {'tagKey': 'cluster-name', 'tagValue': 'slurm-cluster'},
     ],
-    'keyPairId': 'KEY_PAIR-t4ZeTus1q2lHpYZ1yICLEa'
+    'keyPairId': 'KEY_PAIR-XXXXXXXXXXXXXXXXXXXX'
 }
 
 print(virtual_server.create(body=virtual_server_body).text)
